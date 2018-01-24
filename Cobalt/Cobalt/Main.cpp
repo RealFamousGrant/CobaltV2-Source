@@ -247,10 +247,13 @@ unsigned long scriptcontextvftableaddr = aslr(0x6bbd00);
 void Scan() {
 	using namespace std;
 	VMProtectBeginMutation("Scan");
-	DWORD ScriptContextVFTable = *(DWORD*)(scriptcontextvftableaddr + 0x2);
-	ScriptContext = FastMemory::Scan((char*)&ScriptContextVFTable);
-	luaState = (ScriptContext + 220) - *(DWORD *)(ScriptContext + 220);
-	SetIdentity();
+	DWORD ScriptContextVFTable = *(DWORD*)((aobscan::scan("\xC7\x07\x00\x00\x00\x00\xC7\x47\x00\x00\x00\x00\x00\x8B\x87", "xx????xx?????xx")) + 0x02); //GetAddr(0x1172F28);
+	ScriptContext = Memory::Scan(PAGE_READWRITE, (char*)&ScriptContextVFTable, "xxxx");
+	DataModel = GetParent(ScriptContext);
+	Workspace = FindFirstClass(DataModel, "Workspace");
+	Players = FindFirstClass(DataModel, "Players");
+	Lighting = FindFirstClass(DataModel, "Lighting");
+	luaState = *(DWORD*)(ScriptContext + 220) - (ScriptContext + 220);
 	VMProtectEnd();
 }
 
