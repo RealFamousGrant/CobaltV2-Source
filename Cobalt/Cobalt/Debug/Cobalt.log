@@ -1,0 +1,15 @@
+﻿  dllmain.cpp
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\main.h(2): warning C4005: '_WIN32_WINNT': macro redefinition
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\shared\sdkddkver.h(213): note: see previous definition of '_WIN32_WINNT'
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\functions.h(117): warning C4018: '<': signed/unsigned mismatch
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\functions.h(218): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(242): note: see declaration of 'freopen'
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\functions.h(219): warning C4996: 'freopen': This function or variable may be unsafe. Consider using freopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.15063.0\ucrt\stdio.h(242): note: see declaration of 'freopen'
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\functions.h(372): warning C4018: '<': signed/unsigned mismatch
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\commands.h(1573): warning C4566: character represented by universal-character-name '\u2716' cannot be represented in the current code page (1252)
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\commands.h(2548): warning C4018: '<': signed/unsigned mismatch
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\commands.h(2549): warning C4018: '<': signed/unsigned mismatch
+c:\users\choco\documents\visual studio 2017\projects\cobalt\cobalt\main.h(143): warning C4101: 'hwProfileInfo': unreferenced local variable
+  Cobalt.vcxproj -> C:\Users\choco\Documents\Visual Studio 2017\Projects\Cobalt\Debug\Cobalt.dll
+  Cobalt.vcxproj -> C:\Users\choco\Documents\Visual Studio 2017\Projects\Cobalt\Debug\Cobalt.pdb (Partial PDB)
