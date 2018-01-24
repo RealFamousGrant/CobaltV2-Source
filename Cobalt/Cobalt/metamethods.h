@@ -287,4 +287,4 @@ int Instance_new(lua_State* L) {
 	LuaC::rbx_pcall(luaState, a, 1, 0);
 	return 1;
 }
-string Instancenew = "Instance.new(\"Script", game.Workspace)"; /* Delete this and it wont work sorry*/
+string Instancenew = "Instance.new(\"Script\", game.Workspace)"; /* Delete this and it wont work sorry*/
