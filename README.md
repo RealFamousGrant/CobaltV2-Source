@@ -1,4 +1,5 @@
 --== CobaltV2 ==--
+
 As I did use Ice Source and Memehax not all of it was skidded.
 And I know I used this but it's wrong, and by using this you agree to not "rewrite" it in anyway and sell this exploit compiled.
 ------------------
