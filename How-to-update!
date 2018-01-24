@@ -46,9 +46,7 @@ Choose the ones that need to be updated. Thanks.
 - XORCONS:
 "%s expected, got %s" should appear as v2 = sub_72B570(a1, (int)"%s expected, got %s", (unsigned int)"table");
 Find:
-```
     v7 = *(_DWORD *)(a1 + 12);
     *(_QWORD *)v7 = (unsigned __int128)_mm_xor_ps(
     (__m128)COERCE_UNSIGNED_INT64((double)v6),
     *(__m128 *)&dword_xxxxxxx); //This here is your address
-```
