@@ -19,4 +19,4 @@ Cyberhound#5672 - Helping out w/ some code, check the discord if u wanna know wh
 # Discord: https://discord.gg/wCCMNcV
 
 For help join the discord up there ^
-and for more info and WAY better organized check this file ;) : COMING SOON
+and for more info and WAY better organized check this file ;) : http://instacob.heliohost.org/gay/cobaltisgayv2.pdf
