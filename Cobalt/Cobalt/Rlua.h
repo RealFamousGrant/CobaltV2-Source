@@ -141,7 +141,7 @@ namespace LuaC {
 	Lua_getmetatable rbx_getmetatable = (Lua_getmetatable)Retcheck::unprotect(aslr(0x733FF0));
 
 	typedef int(__cdecl *Identity)();
-	Identity rbx_identity = (Identity)aslr(0x72D3F7);
+	Identity rbx_identity = (Identity)aslr(0x5A96E0);
 
 	
 	DWORD PENV = aslr(0x72D3F7); //EIP of the jz.
