@@ -144,7 +144,7 @@ namespace LuaC {
 	Identity rbx_identity = (Identity)aslr(0x72D3F7);
 
 	
-	DWORD PENV = aslr(0x0x72D3F7); //EIP of the jz.
+	DWORD PENV = aslr(0x72D3F7); //EIP of the jz.
 
 	void rbx_getfield(lua_state lst, int index, const char *k) {
 		set_jnz(PENV);
