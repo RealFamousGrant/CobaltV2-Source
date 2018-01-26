@@ -102,49 +102,49 @@ namespace LuaC {
 		VirtualProtect((void*)addr, 5, o_buff, &o_buff);
 	}
 	typedef void(__cdecl *Lua_getfield)(lua_state lst, int index, const char *k);
-	Lua_getfield rbx_getfieldbase = (Lua_getfield)Retcheck::unprotect(aslr(0x733D00));//i was right ;-;
+	Lua_getfield rbx_getfieldbase = (Lua_getfield)Retcheck::unprotect(aslr(0x71D170));//i was right ;-;
 
 	typedef void(__cdecl *Lua_settop)(lua_state lst, int index);
-	Lua_settop rbx_settopbase = (Lua_settop)Retcheck::unprotect(aslr(0x735E40));//done
+	Lua_settop rbx_settopbase = (Lua_settop)Retcheck::unprotect(aslr(0x71F2A0));//done
 
 	typedef void(__cdecl *Lua_pushstring)(lua_state lst, const char *s);
-	Lua_pushstring rbx_pushstringbase = (Lua_pushstring)aslr(0x7350B0);
+	Lua_pushstring rbx_pushstringbase = (Lua_pushstring)aslr(0x71E510);
 	
 	typedef void(__cdecl *Lua_pushvalue)(lua_state lst, int index);
-	Lua_pushvalue rbx_pushvaluebase = (Lua_pushvalue)Retcheck::unprotect(aslr(0x735180));
+	Lua_pushvalue rbx_pushvaluebase = (Lua_pushvalue)Retcheck::unprotect(aslr(0x71E5D0));
 
 	typedef int(__cdecl *Lua_pcall)(lua_state lst, int nargs, int nresults, int errfunc);
-	Lua_pcall rbx_pcallbase = (Lua_pcall)Retcheck::unprotect(aslr(0x734AE0));
+	Lua_pcall rbx_pcallbase = (Lua_pcall)Retcheck::unprotect(aslr(0x71DF50));
 
 	typedef void(__cdecl *Lua_setfield)(lua_state lst, int index, const char *k);
-	Lua_setfield rbx_setfieldbase = (Lua_setfield)Retcheck::unprotect(aslr(0x735A60));
+	Lua_setfield rbx_setfieldbase = (Lua_setfield)Retcheck::unprotect(aslr(0x71EEC0));
 
 	typedef void(__cdecl *Lua_pushnumber)(lua_state lst, double n);
-	Lua_pushnumber rbx_pushnumberbase = (Lua_pushnumber)Retcheck::unprotect(aslr(0x735020));
+	Lua_pushnumber rbx_pushnumberbase = (Lua_pushnumber)Retcheck::unprotect(aslr(0x71E480));
 
 	typedef const char*(__cdecl *Lua_ToLString)(lua_state lst, int idx, size_t *len);
-	Lua_ToLString rbx_toLstringbase = (Lua_ToLString)Retcheck::unprotect(aslr(0x736080));
+	Lua_ToLString rbx_toLstringbase = (Lua_ToLString)Retcheck::unprotect(aslr(0x71F4E0));
 
 	typedef int(__cdecl *Lua_toBoolean)(lua_state lst, int idx);
-	Lua_toBoolean rbx_toBoolbase = (Lua_toBoolean)Retcheck::unprotect(aslr(0x735FC0));
+	Lua_toBoolean rbx_toBoolbase = (Lua_toBoolean)Retcheck::unprotect(aslr(0x71F420));
 
 	typedef int(__cdecl *Lua_tonumber)(lua_state lst, int idx);
-	Lua_tonumber rbx_tonumberbase = (Lua_tonumber)Retcheck::unprotect(aslr(0x736360));
+	Lua_tonumber rbx_tonumberbase = (Lua_tonumber)Retcheck::unprotect(aslr(0x71F7C0));
 
 	typedef int(__cdecl *Lua_type)(lua_state lst, int idx, bool type);
-	Lua_type rbx_typebase = (Lua_type)Retcheck::unprotect(aslr(0x7364C0));
+	Lua_type rbx_typebase = (Lua_type)Retcheck::unprotect(aslr(0x71F920));
 
 	typedef int(__cdecl *Lua_next)(lua_state lst, int idx);
-	Lua_next rbx_nextbase = (Lua_next)Retcheck::unprotect(aslr(0x734960));
+	Lua_next rbx_nextbase = (Lua_next)Retcheck::unprotect(aslr(0x71DDD0));
 
 	typedef int(__cdecl *Lua_getmetatable)(lua_state lst, int idx);
-	Lua_getmetatable rbx_getmetatable = (Lua_getmetatable)Retcheck::unprotect(aslr(0x733FF0));
+	Lua_getmetatable rbx_getmetatable = (Lua_getmetatable)Retcheck::unprotect(aslr(0x71D460));
 
 	typedef int(__cdecl *Identity)();
-	Identity rbx_identity = (Identity)aslr(0x5A96E0);
+	Identity rbx_identity = (Identity)aslr(0x58C8C0);
 
 	
-	DWORD PENV = aslr(0x72D3F7); //EIP of the jz.
+	DWORD PENV = aslr(0x7167A7); //EIP of the jz.
 
 	void rbx_getfield(lua_state lst, int index, const char *k) {
 		set_jnz(PENV);
