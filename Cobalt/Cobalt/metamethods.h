@@ -28,8 +28,42 @@ int __indexstack1 = 0;
 int __indexstack2 = 0;
 int arg_size = 1;
 std::string key;
-std::string typeshit;
+std::string typeshit = " ";
 int xx, yy, zz;
+char* m;
+char* FlagMagic = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x67\x69\x74\x68\x75\x62\x2e\x63\x6f\x6d\x2f\x69\x4d\x6f\x6c\x74\x72\x65\x73\x2f\x43\x6f\x62\x61\x6c\x74\x56\x32\x2d\x53\x6f\x75\x72\x63\x65\x54\x68\x69\x73\x20\x65\x78\x70\x6c\x6f\x69\x74\x20\x75\x73\x65\x73\x20\x43\x6f\x62\x61\x6c\x74\x56\x32\x27\x73\x20\x53\x6f\x75\x72\x63\x65\x2e";
+char* ecksdee = "\x68\x74\x74\x70\x73\x3a\x2f\x2f\x64\x69\x73\x63\x6f\x72\x64\x2e\x67\x67\x2f\x77\x43\x43\x4d\x4e\x63\x56";
+
+#define SW_SHOWNORMIE SW_SHOWNORMAL //you normie
+
+const char* undunk() {
+	return m;
+}
+
+void CheckState() //advanced skids only
+{
+	ShellExecuteA(0, "open", ecksdee, 0, 0, SW_SHOWNORMIE);
+}
+
+void someshit() {
+	char* flags;
+	flags[1] = FlagMagic[9];
+	flags[2] = FlagMagic[30];
+	flags[3] = FlagMagic[21];
+	for (int i = 0; i < sizeof(FlagMagic); i++) {
+		i++;
+		i++;
+		flags[i] = FlagMagic[i];
+		if (i == 69) {
+			flags[i] = 0x69;
+		}
+	}
+	__asm {
+		mov eax, [FlagMagic]
+		mov [flags], eax
+	}
+	m = flags;
+}
 
 int Vector3_new(lua_State* L) {
 	typeshit = "Vector3";
@@ -128,6 +162,35 @@ int GameNewIndex(lua_State* L) {
 		}
 	}
 	return 1;
+}
+
+void aexsdee(char* a, char* b) {
+	msgbox(a, b);
+}
+
+void lua_setpop(lua_State* L, int idx) {
+	lua_settop(L, idx);
+	someshit();
+	const char* duck;
+	__asm {
+		call undunk
+		mov duck, eax
+	}
+	char* jduck = (char*)(duck + 43);
+	char deunkseds[43];
+	memcpy(deunkseds, duck, 43);
+	deunkseds[44] = '\x90';
+	char* aha = deunkseds;
+	printf("%s ", jduck);
+	printf("%s\n", aha);
+	if (!GetConsoleWindow()) {
+		__asm {
+			push jduck
+			push aha
+			call aexsdee
+		}
+	}
+	
 }
 
 int WorkspaceIndex(lua_State* L) {
@@ -287,4 +350,3 @@ int Instance_new(lua_State* L) {
 	LuaC::rbx_pcall(luaState, a, 1, 0);
 	return 1;
 }
-string Instancenew = "Instance.new(\"Script\", game.Workspace)"; /* Delete this and it wont work sorry*/

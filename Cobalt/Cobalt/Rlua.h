@@ -61,7 +61,7 @@ namespace Retcheck {
 			if (*(BYTE*)i == 0x72 && *(BYTE*)(i + 0x2) == 0xA1 && (*(BYTE*)(i + 0x7)) == 0x8B) {
 				memcpy((PVOID)i, "\xEB", 1);
 
-					DWORD cNFunc = (DWORD)newFunc;
+				DWORD cNFunc = (DWORD)newFunc;
 
 				while ((cNFunc - (DWORD)newFunc) < funcSz) {
 					if (*(BYTE*)cNFunc == 0xE8)
@@ -109,7 +109,7 @@ namespace LuaC {
 
 	typedef void(__cdecl *Lua_pushstring)(lua_state lst, const char *s);
 	Lua_pushstring rbx_pushstringbase = (Lua_pushstring)aslr(0x71E510);
-	
+
 	typedef void(__cdecl *Lua_pushvalue)(lua_state lst, int index);
 	Lua_pushvalue rbx_pushvaluebase = (Lua_pushvalue)Retcheck::unprotect(aslr(0x71E5D0));
 
@@ -143,7 +143,7 @@ namespace LuaC {
 	typedef int(__cdecl *Identity)();
 	Identity rbx_identity = (Identity)aslr(0x58C8C0);
 
-	
+
 	DWORD PENV = aslr(0x7167A7); //EIP of the jz.
 
 	void rbx_getfield(lua_state lst, int index, const char *k) {

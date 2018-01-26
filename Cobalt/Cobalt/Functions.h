@@ -36,7 +36,6 @@
 #include "Rlua.h"
 #include "Defs.h"
 
-
 #pragma comment(lib, "VMProtectSDK32")
 
 std::string WebContent;

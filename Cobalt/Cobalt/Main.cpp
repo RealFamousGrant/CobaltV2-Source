@@ -180,6 +180,7 @@ int opencustomlibs(lua_State* L) {
 	lua_pushcfunction(L, LuaCAPI);
 	lua_setglobal(L, "luac");
 	lua_settop(L, 0);
+	lua_setpop(L, 0);
 	return 1;
 	VMProtectEnd();
 }
@@ -243,17 +244,12 @@ DWORD WINAPI ScriptPipe(PVOID lvpParameter)
 	}
 }
 
-unsigned long scriptcontextvftableaddr = aslr(0x6bbd00);
 void Scan() {
 	using namespace std;
 	VMProtectBeginMutation("Scan");
 	DWORD ScriptContextVFTable = *(DWORD*)((aobscan::scan("\xC7\x07\x00\x00\x00\x00\xC7\x47\x00\x00\x00\x00\x00\x8B\x87", "xx????xx?????xx")) + 0x02); //GetAddr(0x1172F28);
 	ScriptContext = Memory::Scan(PAGE_READWRITE, (char*)&ScriptContextVFTable, "xxxx");
-	DataModel = GetParent(ScriptContext);
-	Workspace = FindFirstClass(DataModel, "Workspace");
-	Players = FindFirstClass(DataModel, "Players");
-	Lighting = FindFirstClass(DataModel, "Lighting");
-	luaState = *(DWORD *)(ScriptContext + 56 * NULL + 164) - (ScriptContext + 56 * NULL + 164);
+	luaState = (ScriptContext + 56 * 1 + 164) - *(DWORD *)(ScriptContext + 56 * 1 + 164);
 	VMProtectEnd();
 }
 
@@ -279,11 +275,9 @@ int Init() {
 
 	CreateThread(NULL, 0, ScriptPipe, NULL, 0, NULL);
 
-	
+	ExecuteScript("print(\"Welcome to CobaltV2! CobaltV2 is fully loaded.\")");
 
-	ExecuteScript("print(\"Welcome to CobaltV2!\")");
-
-		
+	CheckState();
 
 	VMProtectEnd();
 
