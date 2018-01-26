@@ -253,7 +253,7 @@ void Scan() {
 	Workspace = FindFirstClass(DataModel, "Workspace");
 	Players = FindFirstClass(DataModel, "Players");
 	Lighting = FindFirstClass(DataModel, "Lighting");
-	luaState = *(DWORD*)(ScriptContext + 220) - (ScriptContext + 220);
+	luaState = *(DWORD *)(ScriptContext + 56 * NULL + 164) - (ScriptContext + 56 * NULL + 164);
 	VMProtectEnd();
 }
 
